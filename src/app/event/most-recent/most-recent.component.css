@@ -1,0 +1,9 @@
+.header {margin-top: 35px;}
+.body {margin-top: 13px; padding: 15px 10px 15px 85px; background: #fff;}
+
+.item {overflow: hidden;}
+.item:not(:last-child) {margin-bottom: 37px;}
+.item > a {float: left; width: 60px; height: 60px; margin: 2px 0 0 2px;}
+.item > a > img {display: block; width: 100%; height: 100%; border: none;}
+.item > .content {margin-left: 70px; font: normal 17px/19px Arial, sans-serif;}
+.item .date {color: #969696; font: inherit;}

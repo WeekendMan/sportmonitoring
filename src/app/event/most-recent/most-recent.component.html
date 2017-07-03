@@ -1,0 +1,13 @@
+<div class="header">Recent tweets</div>
+<div class="body">
+  <div class="item" *ngFor="let tweet of mostRecent">
+    <a href="https://twitter.com/{{ tweet.screenName }}" target="_blank">
+      <img src="{{ tweet.profileImageUrl }}" alt="User avatar" *ngIf="tweet.profileImageUrl">
+    </a>
+    <div class="content" *ngIf="tweet.text">
+      <a href="https://twitter.com/{{ tweet.screenName }}" target="_blank">{{ tweet.screenName }}</a>
+      <span [innerHTML]="tweet.text | mySafeHTML | myReplaceLineBreaks | myActiveURLs | myMetatags"></span>
+      <span class="date">{{ tweet.timestamp | myPreparingSymbolicDate:"timeOnly" }}</span>
+    </div>
+  </div>
+</div>

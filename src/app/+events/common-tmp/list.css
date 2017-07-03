@@ -1,0 +1,36 @@
+.content {animation: start .5s 1 ease-in-out; width: 1320px; margin: 0 auto; cursor: default;}
+
+h1 {margin-bottom: 30px; text-align: center; font: bold 28px OpenSans, sans-serif; text-transform: uppercase; color: #fefbfd; letter-spacing: 2px;}
+
+.items {padding-bottom: 20px;}
+.items .head, .items .item {width: 985px;}
+.items .head {display: flex; height: 41px; margin: 0 auto 27px; border-bottom: 1px solid #fff;}
+.items .head > div {height: 100%; font: normal 22px/35px OpenSans,sans-serif; color: #e1e7e8;}
+.items .head .name {text-align: center;}
+.items .start, .items .end {text-align: center;}
+.items .head .start, .items .head .end {width: 245px;}
+.items .item .start, .items .item .end {width: 190px;}
+
+.items .item .start {position: relative;}
+.items .item .start .label {position: absolute; top: 0; left: -110px; bottom: 0; z-index: 1; width: 65px; height: 22px; margin: auto; line-height: 22px;}
+.items .item .start .label span {position: relative; z-index: 1; color: #e2f4ec;}
+.items .item .start .background {position: absolute; top: 0; left: 5px; z-index: 0; width: 57px; height: 22px; transform: skew(-17deg); transition: box-shadow .5s;}
+.items .live .background {background: linear-gradient(to top right, #d05653, #b52975);}
+.items .last .background {background: linear-gradient(to top right, #08bf8c, #04bf8f, #06bc9d, #10afc7, #12aadb, #10aadf);}
+.items .next .background {background: linear-gradient(to top right, #16b9fb, #13bbfb, #309ff3, #5870e6, #8c4ada, #8b40d7);}
+
+.items .name {flex-grow: 4; overflow: hidden; text-overflow: ellipsis;}
+.items .hasTimer .name {display: flex;}
+.items .hasTimer span {flex-grow: 20;}
+.items .hasTimer .timer {flex-grow: 1; padding: 0 5px; text-align: center; font-size: 0; background: rgba(66, 119, 135, .74);}
+.items .hasTimer .timer span {display: inline-block; height: 100%; vertical-align: middle; font: bold 27px/49px OpenSans, sans-serif; color: #fcfbfc;}
+.items .hasTimer .timer .daysLabel {margin-right: 15px; font-size: 18px; line-height: 57px;}
+.items .hasTimer .timer .delimiter {margin: 0 5px;}
+
+.items > .item {display: flex; height: 50px; margin: 10px auto; font: normal 20px/50px OpenSans, sans-serif; text-decoration: none; color: #aebec8; border-bottom: 2px solid rgba(139, 159, 162, 0.78); transition: color .5s, border-color .5s;}
+.items > a.item:hover {color: #fff; border-color: #bbb; cursor: pointer;}
+.items > .item:hover .background {box-shadow: 0 0 20px rgba(255, 255, 255, .6);}
+
+.navigation {margin: 20px 0; text-align: center; font-size: 0;}
+.navigation a {display: inline-block; width: 245px; height: 60px; margin: 0 44px; text-align: center; text-decoration: none; border-radius: 9px; font: normal 20px/62px OpenSans, sans-serif; color: #000; text-transform: none; background: #fff; transition: background .5s, color .5s;}
+.navigation a:hover {background: #d5f7ff; color: #1c25a0;}

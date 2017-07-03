@@ -1,0 +1,18 @@
+{
+  "name": "promodio-web-prod",
+  "version": "1.0.0",
+  "description": "Promodio-web production server of the Promodio project",
+  "keywords": [],
+  "author": "George <george.khua@gmail.com>",
+  "homepage": "https://promodio.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js http://69.89.12.90:8080/v1/api/"
+  },
+  "dependencies": {
+    "colors": "~1.1.2",
+    "express": "~4.15.3"
+  },
+  "devDependencies": {},
+  "repository": {}
+}

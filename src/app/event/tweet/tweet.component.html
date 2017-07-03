@@ -1,0 +1,19 @@
+<div class="tweet" *ngIf="tweet">
+  <div class="header" *ngIf="currentLabel">{{ currentLabel }}</div>
+  <div class="body">
+    <div class="tags">
+      <div *ngFor="let key of tweet.tags | myObjectKeys">{{ tweet.tags[key] }}</div>
+    </div>
+    <a class="username" href="https://twitter.com/{{ tweet.screenName }}" target="_blank">
+      @{{ tweet.screenName }}
+      <img src="{{ tweet.profileImageUrl }}" alt="User avatar">
+    </a>
+    <div class="text" [innerHTML]="tweet.text | mySafeHTML | myReplaceLineBreaks | myActiveURLs | myMetatags"></div>
+    <img src="{{ tweet.img }}" alt="Tweet image" *ngIf="tweet.img">
+    <div class="date">{{ tweet.timestamp | myPreparingSymbolicDate }}</div>
+    <div class="reactions">
+      <div class="reposts">{{ tweet.retweetCount }}</div>
+      <div class="likes">{{ tweet.favoriteCount }}</div>
+    </div>
+  </div>
+</div>

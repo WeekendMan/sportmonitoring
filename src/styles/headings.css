@@ -1,0 +1,59 @@
+@font-face {
+  font-family: MyriadPro;
+  src: url(../assets/fonts/MyriadPro-Regular.woff);
+}
+@font-face {
+  font-family: CodeProLight;
+  src: url(../assets/fonts/Code-Pro-Light-LC.woff);
+}
+@font-face {
+  font-family: NorthRegular;
+  src: url(../assets/fonts/North-Regular.woff);
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans.woff);
+}
+@font-face {
+  font-family: OpenSansBold;
+  src: url(../assets/fonts/OpenSans-Bold.woff);
+}
+@font-face {
+  font-family: OpenSansLight;
+  src: url(../assets/fonts/OpenSans-Light.woff);
+}
+@font-face {
+  font-family: UniSansHeavyItalic;
+  src: url(../assets/fonts/UniSansHeavyItalicCAPS.woff);
+}
+@font-face {
+  font-family: UniSansThin;
+  src: url(../assets/fonts/UniSansThinCAPS.woff);
+}
+@font-face {
+  font-family: UniSansThinItalic;
+  src: url(../assets/fonts/UniSansThinItalicCAPS.woff);
+}
+
+@keyframes start {
+  from {position: relative; top: 30px; opacity: 0;}
+  to {position: relative; top: 0; opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes blinking {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+* {margin: 0; padding: 0; outline: none;}
+html {height: 100%;}
+body {min-height: 100%; background: linear-gradient(to bottom, #201929, #433558, #0c4160, #064f59, #070b16);}
+
+.tweet .body .text a, .item > .content a {color: #3b94d9; transition: color .5s;}
+.tweet .body .text a:hover, .item > .content a:hover {color: #6abeff;}

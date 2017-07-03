@@ -1,0 +1,28 @@
+<div class="header"
+     *ngIf="persons && persons.length"
+     [textContent]="'The most popular racers' + (isStage ? ' of the stage' : '')"></div>
+<div class="table" *ngIf="persons && persons.length">
+  <div class="head">
+    <div class="row">
+      <div class="cell team">Team</div>
+      <div class="cell name">Racer</div>
+      <div class="cell interest">Mentions</div>
+      <div class="cell sentiment">Sentiment</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="row"
+         [class.positive]="person.sentiment >= 0"
+         [class.negative]="person.sentiment < 0"
+         *ngFor="let person of persons">
+      <div class="cell team">
+        <div class="country">{{ person.teamShortcut }}</div>
+      </div>
+      <div class="cell name">{{ person.racer }}</div>
+      <div class="cell interest">{{ person.traffic }}</div>
+      <div class="cell sentiment">{{ person.sentiment }}</div>
+    </div>
+    <div class="header">Mentions over time</div>
+    <div class="row graphic" *ngIf="!isStage"></div>
+  </div>
+</div>

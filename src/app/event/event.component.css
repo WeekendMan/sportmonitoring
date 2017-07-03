@@ -1,0 +1,36 @@
+.items {animation: start .5s 1 ease-in-out; width: 1318px; margin: 0 auto; padding-bottom: 35px; overflow: hidden;}
+
+.left, .right {width: 645px;}
+.left {float: left; clear: left;}
+.right {float: right; clear: right;}
+
+.left.titles {margin-bottom: 12px;}
+.header {text-transform: uppercase; text-align: right; color: #fff; font: bold 18px OpenSans, sans-serif; letter-spacing: .8px;}
+
+.label {position: relative; width: 168px; height: 29px; margin-bottom: 9px; padding-right: 11px; box-sizing: border-box; text-align: center; color: #fff; font: normal 18px/34px MyriadPro, sans-serif; background: linear-gradient(to right, #d05653, #b52975);}
+.label:after {position: absolute; right: -5px; top: 0; width: 17px; height: 100%; transform: skew(-18deg, 0); background: #b52975; content: "";}
+
+h1, .eventName {padding-left: 4px; font: bold 49px OpenSans, sans-serif; text-transform: uppercase; color: #fff; letter-spacing: 3.3px;}
+h2, h3, .eventDate {margin: 6px 0 0; padding-left: 8px; font: normal 28px OpenSans, sans-serif; text-transform: uppercase; color: #fff; letter-spacing: .2px;}
+
+.clear {width: 100%; clear: both;}
+
+.lowerContent {position: relative; width: 100%; height: 200px; margin: 50px 0;}
+.lowerContent .title {color: #fff; text-decoration: none; transition: text-shadow .5s;}
+.lowerContent .title:hover {text-shadow: 0 0 7px #fff;}
+.lowerContent .eventName {overflow: hidden; letter-spacing: normal;}
+.lowerContent .button:not(:last-child) {margin-left: 40px;}
+.lowerContent .button {float: right; width: 245px; height: 60px; margin-top: 3px; text-align: center; text-decoration: none; border-radius: 9px; font: normal 20px/62px OpenSans, sans-serif; color: #000; text-transform: none; background: #fff; transition: background .5s, color .5s;}
+.lowerContent .button:hover {background: #d5f7ff; color: #1c25a0;}
+.lowerContent .email {position: absolute; right: 0; bottom: 0; text-shadow: 0 0 0 transparent; text-transform : uppercase; font: normal 13px OpenSans, sans-serif; color: #fff; transition: text-shadow .5s;}
+.lowerContent .email:hover {text-shadow: 0 0 2px #fff;}
+
+.stages {margin: 20px auto 20px auto; padding: 5px;}
+.stages button {position: relative; margin-bottom: 15px; font: 20px/22px OpenSans, sans-serif; text-transform: uppercase; color: #fff; background: transparent; border: none; border-bottom: 1px solid transparent; transition: all .5s;}
+.stages button:hover {border-bottom-color: #fff; text-shadow: 1px 1px 1px #fff; cursor: pointer;}
+.stages button:not(.active):after {animation: blinking 2s infinite linear; position: absolute; bottom: -17px; left: 0; width: 100%; height: 14px; font: 12px/14px OpenSans, sans-serif; content: "click to open";}
+.stages .list {display: flex; justify-content: flex-start; align-content: flex-start; flex-wrap: wrap;}
+.stages a, .stages span {width: 100px; height: 0; margin: 0 2px 0 3px; padding: 0; box-sizing: border-box; opacity: 0; overflow: hidden; color: #fff; font: 14px/42px OpenSans, sans-serif; text-decoration: none; text-transform: uppercase; background: #7c7d8a; transition: all .5s;}
+.stages a.active, .stages span {background: #a3a3a5; cursor: default;}
+.stages a:not(.active):hover {background: #9598bd; box-shadow: 0 0 21px rgba(255, 255, 255, 0.48);}
+.list.active .link {height: 50px; margin: 5px 2px 5px 3px; padding: 5px; opacity: 1;}

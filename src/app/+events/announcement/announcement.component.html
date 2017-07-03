@@ -1,0 +1,28 @@
+<loading-stub *ngIf="!events || !events.length"></loading-stub>
+<div class="content" *ngIf="events && events.length">
+  <h1>Race list</h1>
+  <div class="items">
+    <div class="head">
+      <div class="start">Start date & time (UTC)</div>
+      <div class="name">Name</div>
+      <div class="end">End date & time (UTC)</div>
+    </div>
+    <div class="item next" *ngFor="let event of events">
+      <div class="start">
+        {{ event.startTimestamp | myPreparingNumericDate }}
+        <div class="label">
+          <span>Next</span>
+          <div class="background"></div>
+        </div>
+      </div>
+      <div class="name">
+        <span>{{ event.name }}</span>
+      </div>
+      <div class="end">{{ event.finishTimestamp | myPreparingNumericDate }}</div>
+    </div>
+  </div>
+  <div class="navigation">
+    <a [routerLink]="['/events']">Race list</a>
+    <a [routerLink]="['/events/archive']">Archived races</a>
+  </div>
+</div>

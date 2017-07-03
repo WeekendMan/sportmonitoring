@@ -1,0 +1,65 @@
+<loading-stub *ngIf="!isAllDataLoaded"></loading-stub>
+<div class="items" *ngIf="isAllDataLoaded">
+  <div class="left titles">
+    <div class="label">{{ isCurrentEvent ? 'Live:' : 'Race:' }}</div>
+    <h1>{{ eventInfo.name }}</h1>
+    <h2>Started at {{ eventInfo.start }}</h2>
+    <h3 *ngIf="stageID">Current stage: {{ stageID }}</h3>
+    <div class="stages" *ngIf="stages.all.length">
+      <div class="header">
+        <button (click)="toggleStagesList()" [class.active]="isStagesListOpen">List of the stages</button>
+      </div>
+      <div class="list" [class.active]="isStagesListOpen">
+        <span
+          class="link"
+          [routerLink]="['/events/' + eventInfo.raceId]"
+          [class.active]="!stageID"
+        >Race</span>
+        <a
+          class="link"
+          *ngFor="let stage of stages.past"
+          [routerLink]="['/events/' + eventInfo.raceId + '/' + stage.index]"
+          [class.active]="stageID === stage.index"
+        >Stage {{ stage.index }}</a>
+        <a
+          class="link"
+          *ngFor="let stage of stages.current"
+          [routerLink]="['/events/' + eventInfo.raceId + '/' + stage.index]"
+          [class.active]="stageID === stage.index"
+        >Stage {{ stage.index }}</a>
+        <span class="link active" *ngFor="let stage of stages.announcement">Stage {{ stage.index }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <most-popular-stage [isStage]="true" [persons]="mostPopularPersonsPeriod"></most-popular-stage>
+    <most-popular [persons]="mostPopularPersonsRace"></most-popular>
+    <most-recent [mostRecent]="mostRecentTweets"></most-recent>
+  </div>
+  <div class="left">
+    <tweets [tweets]="tweets"></tweets>
+  </div>
+  <div class="left lowerContent" *ngIf="isCurrentEvent && config.current.length">
+    <div class="label">Upcoming Race:</div>
+    <div class="eventName" *ngIf="config.upcoming">
+      <a [routerLink]="['/events']" class="button">Race list</a>
+      {{ config.upcoming.name }}
+    </div>
+    <div class="eventDate" *ngIf="config.upcoming">{{ config.upcoming.start }}</div>
+    <a class="email" target="_blank" href="mailto: mail@sportmonitoring.info">mail@sportmonitoring.info</a>
+  </div>
+  <div class="left lowerContent" *ngIf="!isCurrentEvent && config.current.length">
+    <div class="label">Live:</div>
+    <div class="eventName" *ngIf="config.current.length">
+      <a [routerLink]="['/events']" class="button">Race list</a>
+      <a [routerLink]="['/events/archive']" class="button">Archive</a>
+      <a [routerLink]="['/events/' + config.current[0].raceId]" class="title">{{ config.current[0].name }}</a>
+    </div>
+    <div class="eventDate" *ngIf="config.current[0] && config.current[0].start">
+      {{ config.current[0].startTimestamp | myPreparingNumericDate }}
+      -
+      {{ config.current[0].finishTimestamp | myPreparingNumericDate }}
+    </div>
+    <a class="email" target="_blank" href="mailto: mail@sportmonitoring.info">mail@sportmonitoring.info</a>
+  </div>
+</div>

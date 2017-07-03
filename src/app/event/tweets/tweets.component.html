@@ -1,0 +1,6 @@
+<div class="header" *ngIf="!isCurrentEvent">Top tweets</div>
+<tweet
+  *ngFor="let key of mixedOrder"
+  [tweet]="tweets[key]"
+  [currentLabel]="(isCurrentEvent ? labels[key] : '' )"
+></tweet>

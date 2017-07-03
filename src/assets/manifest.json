@@ -1,0 +1,20 @@
+{
+ "name": "App",
+ "icons": [
+  {
+   "src": "/assets/icon/favicon.ico",
+   "sizes": "18x18",
+   "type": "image/x-icon"
+  },
+  {
+   "src": "/assets/icon/favicon_18x18.png",
+   "sizes": "18x18",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon/favicon_32x32.png",
+   "sizes": "32x32",
+   "type": "image/png"
+  }
+ ]
+}

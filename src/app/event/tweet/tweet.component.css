@@ -1,0 +1,19 @@
+.tweet, .newestTweets, .nextEvent {margin-top: 35px;}
+.tweet .body {position: relative; margin-top: 10px; padding-bottom: 20px; background: #fff;}
+.tweet .body .tags {display: flex; flex-wrap: wrap; min-height: 30px;}
+.tweet .body .tags > div {position: relative; height: 30px; margin-bottom: 2px; padding: 0 12px; text-align: center; color: #fff; font: normal 14px/32px OpenSans, sans-serif; background: #036b76;}
+.tweet .body .tags > div:not(:first-child):before, .tweet .body .tags > div:after {position: absolute; top: 0; display: block; width: 10px; height: 100%; transform: skew(-19deg, 0); background: inherit; content: "";}
+.tweet .body .tags > div:not(:first-child) {margin: -4px 6px 0;}
+.tweet .body .tags > div:first-child {margin: -4px 6px 0 0;}
+.tweet .body .tags > div:before {left: -5px;}
+.tweet .body .tags > div:after {right: -5px;}
+.tweet .body .username {display: block; width: 530px; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; font: normal 27px/46px OpenSans, sans-serif; color: #3b94d9; transition: color .5s;}
+.tweet .body .username img {float: left; width: 50px; height: 50px; margin-right: 20px;}
+.tweet .body .username:hover {color: #6abeff;}
+.tweet .body .text {width: 530px; margin: 13px auto 10px; font: normal 25px/30px Arial, sans-serif; letter-spacing: .1px;}
+.tweet .body img {display: block; max-width: 530px; max-height: 400px; margin: 0 auto; border: none;}
+.tweet .body .date {width: 530px; margin: 5px auto 0; font: normal 11px/15px OpenSans, sans-serif; color: #aab8c2; letter-spacing: .2px; text-align: right;}
+.tweet .body .reactions {width: 490px; height: 20px; margin: 0 auto; font: normal 12px/21px OpenSans, sans-serif; color: #aab8c2;}
+.tweet .body .reactions .likes, .tweet .body .reactions .reposts {display: inline-block; height: 100%; margin-right: 20px; font: inherit;}
+.tweet .body .reactions .likes {background: url(../../../assets/img/twit_likes.png) no-repeat 0 center; padding-left: 21px;}
+.tweet .body .reactions .reposts {background: url(../../../assets/img/twit_reposts.png) no-repeat 0 center; padding-left: 30px;}
