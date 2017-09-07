@@ -27,7 +27,7 @@ export class MonitoringService {
   }
 
   // private baseURL: string = 'http://178.159.110.25:5000/api/';
-  private baseURL: string = 'http://sportmonitoring.info/api/'; // full url for the development mode
+  private baseURL: string = 'http://sportmonitoring.info:5000/api/';
   private configURL: string = this.baseURL + 'config/';
   private stagesURL: string = this.baseURL + 'stage';
   private topTweetsURL: string = this.baseURL + 'top';
@@ -66,7 +66,7 @@ export class MonitoringService {
 
           stages.all = MonitoringService.getValues(response.json())
                                         .map((res: any) => TypedJSON.parse(res, StageModel));
-          for (const stage of stages.all) {
+          for (let stage of stages.all) {
             if (stage.state === -1) {
               stages.past.push(stage);
             } else if (stage.state === 0) {

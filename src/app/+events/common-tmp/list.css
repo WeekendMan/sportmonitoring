@@ -20,6 +20,7 @@ h1 {margin-bottom: 30px; text-align: center; font: bold 28px OpenSans, sans-seri
 .items .next .background {background: linear-gradient(to top right, #16b9fb, #13bbfb, #309ff3, #5870e6, #8c4ada, #8b40d7);}
 
 .items .name {flex-grow: 4; overflow: hidden; text-overflow: ellipsis;}
+.items .item .name {width: 605px;}
 .items .hasTimer .name {display: flex;}
 .items .hasTimer span {flex-grow: 20;}
 .items .hasTimer .timer {flex-grow: 1; padding: 0 5px; text-align: center; font-size: 0; background: rgba(66, 119, 135, .74);}
@@ -30,6 +31,8 @@ h1 {margin-bottom: 30px; text-align: center; font: bold 28px OpenSans, sans-seri
 .items > .item {display: flex; height: 50px; margin: 10px auto; font: normal 20px/50px OpenSans, sans-serif; text-decoration: none; color: #aebec8; border-bottom: 2px solid rgba(139, 159, 162, 0.78); transition: color .5s, border-color .5s;}
 .items > a.item:hover {color: #fff; border-color: #bbb; cursor: pointer;}
 .items > .item:hover .background {box-shadow: 0 0 20px rgba(255, 255, 255, .6);}
+
+.items .item > div {flex-shrink: 0;}
 
 .navigation {margin: 20px 0; text-align: center; font-size: 0;}
 .navigation a {display: inline-block; width: 245px; height: 60px; margin: 0 44px; text-align: center; text-decoration: none; border-radius: 9px; font: normal 20px/62px OpenSans, sans-serif; color: #000; text-transform: none; background: #fff; transition: background .5s, color .5s;}

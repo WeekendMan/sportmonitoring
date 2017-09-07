@@ -1,0 +1,7 @@
+:host {animation: start .6s ease-in-out 1; display: block; width: 1200px; margin: 0 auto 40px; padding: 60px 120px; box-sizing: border-box; background: #fff; color: #0a0a0a; font: normal 18px/30px OpenSans;}
+
+p, ol {font: inherit; color: inherit;}
+
+p {margin: 20px 0;}
+
+ol {padding-left: 30px;}

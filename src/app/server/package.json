@@ -1,13 +1,13 @@
 {
-  "name": "promodio-web-prod",
+  "name": "Sportmonitoring",
   "version": "1.0.0",
-  "description": "Promodio-web production server of the Promodio project",
+  "description": "Sportmonitoring project",
   "keywords": [],
-  "author": "George <george.khua@gmail.com>",
-  "homepage": "https://promodio.com",
+  "author": "George <georgiy.dneprovskiy@gmail.com>",
+  "homepage": "https://sportmonitoring.info",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js http://69.89.12.90:8080/v1/api/"
+    "start": "node server.js"
   },
   "dependencies": {
     "colors": "~1.1.2",

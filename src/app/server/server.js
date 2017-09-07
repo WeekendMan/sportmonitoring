@@ -11,21 +11,21 @@ function start(error, stdout, stderr) {
   const express = require('express');
   const colors = require('colors');
   const app = express();
-  const domain = 'http://178.159.110.25';
+  const domain = 'http://sportmonitoring.info:5000';
   let port = 80;
 
   // Routes
   app.use(express.static(`${__dirname}/public`));
 
   app.all('/api/:link', (req, res) => {
-    console.info(`${new Date()} | request to ${domain}:5000/api${req.params.link}`.cyan);
+    console.info(`${new Date()} | request to ${domain}/api${req.params.link}`.cyan);
     res.redirect(302, process.argv + req.params.link);
-  });
+  })
 
   app.get('*', (req, res) => {
     console.info(`${new Date()} | page request by URL ${req.protocol}://${req.get('Host')}${req.url}`.cyan);
     res.sendFile(`${__dirname}/public/index.html`);
-  });
+  })
 
   // Starting the server
   app.listen(port, () => {

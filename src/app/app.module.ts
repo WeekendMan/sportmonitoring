@@ -11,11 +11,15 @@ import { ROUTES } from './app.routes';
 import '../styles/headings.css';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { PartnersComponent } from './partners/partners.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    PartnersComponent
   ],
   imports: [
     BrowserModule,
