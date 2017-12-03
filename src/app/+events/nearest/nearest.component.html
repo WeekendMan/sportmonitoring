@@ -1,13 +1,24 @@
-<loading-stub *ngIf="!preparedMixedEvents.length || !preparedAnnouncedEvents.length"></loading-stub>
-<div class="content"
-     *ngIf="
-       preparedMixedEvents
-       &&
-       preparedAnnouncedEvents
-       &&
-       preparedMixedEvents.length
-       &&
-       preparedAnnouncedEvents.length">
+<loading-stub *ngIf="!preparedTopEvents.length || !preparedBottomEvents.length"></loading-stub>
+<div
+  class="content"
+  *ngIf="
+    preparedTopEvents
+    &&
+    preparedBottomEvents
+    &&
+    preparedTopEvents.length
+    &&
+    preparedBottomEvents.length
+    &&
+    classTopSet
+    &&
+    classTopSet.length === sectionItemsCount
+    &&
+    classBottomSet
+    &&
+    classBottomSet.length === sectionItemsCount
+  "
+>
   <h1>Race list</h1>
   <div class="items">
     <div class="head">
@@ -15,26 +26,32 @@
       <div class="name">Name</div>
       <div class="end">End date & time (UTC)</div>
     </div>
-    <a class="item"
-       *ngFor="let event of preparedMixedEvents"
-       [routerLink]="[ '/events/' + event.raceId + (event.stageIndex ? '/' + event.stageIndex : '') ]"
-       [ngClass]="event.finishTimestamp > timeNow ? 'live' : 'last'"
+    <a
+      class="item"
+      *ngFor="let event of preparedTopEvents; let i1 = index"
+      [routerLink]="[ '/events/' + event.raceId + (event.stageIndex ? '/' + event.stageIndex : '') ]"
+      [ngClass]="classTopSet[i1]"
     >
       <div class="start">
         {{ event.startTimestamp | myPreparingNumericDate }}
         <div class="label">
-          <span [textContent]="currentEvents.length ? 'Live' : 'Last'"></span>
+          <span [textContent]="classTopSet[i1]"></span>
           <div class="background"></div>
         </div>
       </div>
       <div class="name">{{ event.name }}{{ event.stageIndex }}</div>
       <div class="end">{{ event.finishTimestamp | myPreparingNumericDate }}</div>
     </a>
-    <div class="item next" *ngFor="let event of preparedAnnouncedEvents">
+    <a
+      class="item"
+      *ngFor="let event of preparedBottomEvents; let i2 = index"
+      [routerLink]="[ ( classTopSet[i2] !== classNames.announcement ? '/events/' + event.raceId + (event.stageIndex ? '/' + event.stageIndex : '') : void ) ]"
+      [ngClass]="classTopSet[i2]"
+    >
       <div class="start">
         {{ event.startTimestamp | myPreparingNumericDate }}
         <div class="label">
-          <span>Next</span>
+          <span [textContent]="classTopSet[i2]"></span>
           <div class="background"></div>
         </div>
       </div>
@@ -42,7 +59,7 @@
         <span>{{ event.name }}</span>
       </div>
       <div class="end">{{ event.finishTimestamp | myPreparingNumericDate }}</div>
-    </div>
+    </a>
   </div>
   <div class="navigation">
     <a [routerLink]="['/events/archive']">Archived races</a>

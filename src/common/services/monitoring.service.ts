@@ -169,9 +169,8 @@ export class MonitoringService {
 
               observer.complete();
             },
-            () => {
-              observer.next(null);
-              observer.complete();
+            (error: Response) => {
+              observer.error(error.text());
             }
           );
     });
@@ -187,9 +186,8 @@ export class MonitoringService {
               );
               observer.complete();
             },
-            () => {
-              observer.next(null);
-              observer.complete();
+            (error: Response) => {
+              observer.error(error.text());
             });
     });
   }
@@ -204,9 +202,8 @@ export class MonitoringService {
               );
               observer.complete();
             },
-            () => {
-              observer.next(null);
-              observer.complete();
+            (error: Response) => {
+              observer.error(error.text());
             }
           );
     });

@@ -37,3 +37,5 @@ h1 {margin-bottom: 30px; text-align: center; font: bold 28px OpenSans, sans-seri
 .navigation {margin: 20px 0; text-align: center; font-size: 0;}
 .navigation a {display: inline-block; width: 245px; height: 60px; margin: 0 44px; text-align: center; text-decoration: none; border-radius: 9px; font: normal 20px/62px OpenSans, sans-serif; color: #000; text-transform: none; background: #fff; transition: background .5s, color .5s;}
 .navigation a:hover {background: #d5f7ff; color: #1c25a0;}
+
+.noEvents {font: 20px/50px OpenSans; text-align: center; color: #fff;}
